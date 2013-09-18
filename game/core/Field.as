@@ -45,10 +45,10 @@
 				switch(bullet.thistype)
 				{
 					case 'round':
-						bd.draw( new round(), M );
+						//bd.draw( new round(), M );
 						break;
 					case 'round_empty':
-						bd.draw( new round_empty(), M );
+						//bd.draw( new round_empty(), M );
 						break;
 				}
 				
