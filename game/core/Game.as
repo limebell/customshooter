@@ -31,6 +31,7 @@
 			shootpointVector[0].bullet(0, 150, 10, 5, 'round', 'blue', 0, 0.16, -57, 0);
 			shootpointVector[0].bullet(0, 30, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
 			shootpointVector[1].bullet(0, -2, 25, 2, 'round_empty', 'green', 0, 0.5, -37, 0);
+			//shootpointVector[1].bullet(0, -150, 25, 5, 'round', 'green', 0, 0.005, -17, 0);
 			shootpointVector[2].bullet(0, 150, 10, 5, 'round', 'blue', 0, 0.16, -57, 0);
 			shootpointVector[2].bullet(0, 30, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
 		}
