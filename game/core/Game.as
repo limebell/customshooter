@@ -28,8 +28,24 @@
 			shootpointVector.push(new ShootPoint( 240, 400 ));
 			shootpointVector.push(new ShootPoint( 360, 400 ));
 			
-			shootpointVector[0].bullet(0, 150, 10, 5, 'round', 'blue', 0, 0.16, -57, 0);
-			shootpointVector[0].bullet(0, 30, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 0, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 10, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 20, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			/*shootpointVector[0].bullet(0, 30, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 40, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 50, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 60, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 70, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 80, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 90, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 100, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 110, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 120, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 130, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 140, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 150, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 160, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);
+			shootpointVector[0].bullet(0, 170, 10, 5, 'round', 'blue', 0.08, 0.16, 57, 0);*/
 			shootpointVector[1].bullet(0, -2, 25, 2, 'round_empty', 'green', 0, 0.5, -37, 0);
 			//shootpointVector[1].bullet(0, -150, 25, 5, 'round', 'green', 0, 0.005, -17, 0);
 			shootpointVector[2].bullet(0, 150, 10, 5, 'round', 'blue', 0, 0.16, -57, 0);
