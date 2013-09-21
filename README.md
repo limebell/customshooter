@@ -17,7 +17,7 @@ Edit and Enjoy your own Shooting Game!
         <li>서버-클라이언트 간 파일 전송</li>
 </ul>
 
-<h3>Stage File form</h3>
+<h3>Stage File format</h3>
 <ul>
         <li>파일 확장자 : .bs</li>
         <li>메인 헤더 : ShootPoint 개수, ShootPoint 위치(파일 내부에서)</li>
