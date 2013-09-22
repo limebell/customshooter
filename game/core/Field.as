@@ -45,16 +45,16 @@
 		
 		private function timerHandler(e:TimerEvent):void {
 			//trace(bulletVector.length);
-			bd.colorTransform(bd.rect, new ColorTransform(1, 1, 1, 0.4) );
+			//bd.colorTransform(bd.rect, new ColorTransform(1, 1, 1, 0.4) );
 			for each(var bullet:Bullet in bulletVector){
 				var M:Matrix = new Matrix(bullet.thissize/8, 0, 0, bullet.thissize/8, bullet.thispoint.x-bullet.thissize, bullet.thispoint.y-bullet.thissize);
 				switch(bullet.thistype)
 				{
 					case 'round':
-						bd.draw( new round(), M );
+						//bd.draw( new round(), M );
 						break;
 					case 'round_empty':
-						bd.draw( new round_empty(), M );
+						//bd.draw( new round_empty(), M );
 						break;
 				}
 				
