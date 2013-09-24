@@ -8,15 +8,23 @@
 	import flash.display.Bitmap;
 	import flash.geom.Matrix;
 	import flash.geom.ColorTransform;
+	import flash.utils.Timer;
+	import flash.events.TimerEvent;
 	
 	public class Field extends Bitmap {
 		
 		public var bulletVector:Vector.<Bullet>;
 		private var stg:MovieClip;
 		private var bd:BitmapData;
+		private var timer:Timer = new Timer(30, 0);
+		private var matrix:Matrix = new Matrix();
+		private var bullets:Vector.<BitmapData> = new Vector.<BitmapData>;
+		private var colorTransform:ColorTransform = new ColorTransform(1, 1, 1, 0.8);
 		
-		public function Field(map:MovieClip, color:String) {
+		public function Field(map:MovieClip) {
 			bulletVector = new Vector.<Bullet>;
+			bullets.push(new round());
+			bullets.push(new round_empty());
 			stg = map;
 			bd = new BitmapData( stg.stage.stageWidth, stg.stage.stageHeight, true, 0 );
 			/*switch(color)
@@ -32,23 +40,29 @@
 					break;
 			}*/
 			
-			this.addEventListener(Event.ENTER_FRAME, enterframeHandler);
+			timer.start();
+			
+			//this.addEventListener(Event.ENTER_FRAME, enterframeHandler);
+			timer.addEventListener(TimerEvent.TIMER, timerHandler);
 			addEventListener(Event.REMOVED_FROM_STAGE, removedFromStageHandler);
 		}
 		
 		
-		private function enterframeHandler(e:Event):void {
+		private function timerHandler(e:TimerEvent):void {
 			//trace(bulletVector.length);
-			//bd.colorTransform(bd.rect, new ColorTransform(1, 1, 1, 0.4) );
+			bd.colorTransform(bd.rect, colorTransform );
 			for each(var bullet:Bullet in bulletVector){
-				var M:Matrix = new Matrix(bullet.thissize/8, 0, 0, bullet.thissize/8, bullet.thispoint.x-bullet.thissize, bullet.thispoint.y-bullet.thissize);
+				matrix.a = bullet.thissize/16;
+				matrix.d = bullet.thissize/16;
+				matrix.tx = bullet.thispoint.x-bullet.thissize;
+				matrix.ty = bullet.thispoint.y-bullet.thissize;
 				switch(bullet.thistype)
 				{
 					case 'round':
-						//bd.draw( new round(), M );
+						bd.draw( bullets[0], matrix );
 						break;
 					case 'round_empty':
-						//bd.draw( new round_empty(), M );
+						bd.draw( bullets[1], matrix );
 						break;
 				}
 				
@@ -70,7 +84,9 @@
 		}
 		
 		protected function removedFromStageHandler(e:Event):void {
-			this.removeEventListener(Event.ENTER_FRAME, enterframeHandler);
+			//this.removeEventListener(Event.ENTER_FRAME, enterframeHandler);
+			timer.removeEventListener(TimerEvent.TIMER, timerHandler);
+			timer.stop();
 			for each(var bullet:Bullet in bulletVector){
 				if( bullet.isDrawn ){
 					//this.removeChild( bullet.bullet );

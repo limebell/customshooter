@@ -18,7 +18,7 @@
 			thissize = size;
 			thiscolor = color;
 			dx = spdX, dy = spdY;
-			switch(thiscolor)
+			/*switch(thiscolor)
 			{
 				case 'red':
 					Game.currentGame.field_r.bulletVector.push(this);
@@ -29,12 +29,13 @@
 				case 'blue':
 					Game.currentGame.field_b.bulletVector.push(this);
 					break;
-			}
+			}*/
+			Game.currentGame.field.bulletVector.push(this);
 		}
 		
 		public function remove():void {
-			var targetVector:Vector.<Bullet>
-			switch(thiscolor)
+			var targetVector:Vector.<Bullet> = Game.currentGame.field.bulletVector;
+			/*switch(thiscolor)
 			{
 				case 'red':
 					targetVector = Game.currentGame.field_r.bulletVector;
@@ -45,7 +46,7 @@
 				case 'blue':
 					targetVector = Game.currentGame.field_b.bulletVector;
 					break;
-			}
+			}*/
 			targetVector.splice(targetVector.indexOf(this), 1);
 			bullet = null;
 			thispoint = null;
